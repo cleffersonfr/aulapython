@@ -91,12 +91,55 @@
 #     q = q+1
 # print(q)
 
-quantidade_numeros_lista = int(input())
-indice_lista = 0
-vezes_que_aparece_100 = 0
-numeros = list(map(int,input().split()))
-while indice_lista < quantidade_numeros_lista-2:
-  if numeros[indice_lista] == 1 and numeros[indice_lista + 1] == 0 and numeros[indice_lista + 2] == 0:
-    vezes_que_aparece_100 = vezes_que_aparece_100 + 1
-    indice_lista = indice_lista + 1
-  print(vezes_que_aparece_100)
+# quantidade_numeros_lista = int(input())
+# indice_lista = 0
+# vezes_que_aparece_100 = 0
+# numeros = list(map(int,input().split()))
+# while indice_lista < quantidade_numeros_lista-2:
+#   if numeros[indice_lista] == 1 and numeros[indice_lista + 1] == 0 and numeros[indice_lista + 2] == 0:
+#     vezes_que_aparece_100 = vezes_que_aparece_100 + 1
+#     indice_lista = indice_lista + 1
+# print(vezes_que_aparece_100)
+
+# n_celulas = int(input())
+# valores_celulas= [0]
+# i=0
+
+# while i<n_celulas:
+#   x = int(input())
+#   valores_celulas.append(x)
+#   i +=1
+
+# valores_celulas.append(0)
+# i = 1
+
+# while i < n_celulas-1:
+#   campo_minado = 0
+#   #verificar celula atual
+#   if valores_celulas[i] > 0:
+#     campo_minado = campo_minado + 1
+#     #verifica celula anterior
+#   if valores_celulas[i - 1] > 0:
+#     campo_minado = campo_minado + 1
+#   #verifica celula posterior
+#   if valores_celulas[i + 1] > 0:
+#     campo_minado = campo_minado + 1
+  
+#   i = i + 1
+#   print(campo_minado)
+
+# def valor(preco, qtd):
+
+#   if qtd<0:
+#     return 0
+
+#   return preco*qtd
+  
+# def valor_total(precos_list,qtd_list):
+#   soma = 0
+#   for i in range(len(precos_list)):
+#     soma += valor(precos_list[i],qtd_list[i])
+#   return
+# r=valor_total(2,-3)
+# print(r)
+

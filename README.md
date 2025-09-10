@@ -133,3 +133,17 @@ else:
 print(animal)
 
 ```
+
+### Problemas
+
+#### Repeticao
+
+- 1064,1066, 1078
+
+#### Listas
+
+- 1175, 1176
+
+### Jogo da forca
+
+- falar basico sobre funcao
