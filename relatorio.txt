@@ -1,0 +1,87 @@
+Hospital:  Hospital Central
+Medicos
+ Nome: Dr. João Silva
+ Especialidade: Cardiologia
+##################################################
+ Nome: Dr. Pedro Santos
+ Especialidade: Neurologia
+##################################################
+ Nome: Dra. Fernanda Rocha
+ Especialidade: Cardiologia
+##################################################
+ Nome: Dr. Marcos Pereira
+ Especialidade: Ortopedia
+##################################################
+==================================================
+Hospital:  Clínica Coração Saudável
+Medicos
+ Nome: Dr. João Silva
+ Especialidade: Cardiologia
+##################################################
+==================================================
+Hospital:  Hospital Ortopédico
+Medicos
+ Nome: Dra. Maria Oliveira
+ Especialidade: Ortopedia
+##################################################
+ Nome: Dr. Marcos Pereira
+ Especialidade: Ortopedia
+##################################################
+==================================================
+Hospital:  Hospital das Clínicas
+Medicos
+ Nome: Dra. Maria Oliveira
+ Especialidade: Ortopedia
+##################################################
+ Nome: Dra. Carolina Mendes
+ Especialidade: Pediatria
+##################################################
+ Nome: Dra. Beatriz Almeida
+ Especialidade: Dermatologia
+##################################################
+==================================================
+Hospital:  Hospital Neurológico
+Medicos
+ Nome: Dr. Pedro Santos
+ Especialidade: Neurologia
+##################################################
+ Nome: Dr. Rafael Souza
+ Especialidade: Neurologia
+##################################################
+==================================================
+Hospital:  Hospital Infantil
+Medicos
+ Nome: Dra. Ana Costa
+ Especialidade: Pediatria
+##################################################
+ Nome: Dra. Carolina Mendes
+ Especialidade: Pediatria
+##################################################
+==================================================
+Hospital:  Clínica São Lucas
+Medicos
+ Nome: Dra. Ana Costa
+ Especialidade: Pediatria
+##################################################
+ Nome: Dr. Rafael Souza
+ Especialidade: Neurologia
+##################################################
+==================================================
+Hospital:  Clínica da Pele
+Medicos
+ Nome: Dr. Ricardo Lima
+ Especialidade: Dermatologia
+##################################################
+ Nome: Dra. Beatriz Almeida
+ Especialidade: Dermatologia
+##################################################
+==================================================
+Hospital:  Hospital Universitário
+Medicos
+ Nome: Dr. Ricardo Lima
+ Especialidade: Dermatologia
+##################################################
+ Nome: Dra. Fernanda Rocha
+ Especialidade: Cardiologia
+##################################################
+==================================================
