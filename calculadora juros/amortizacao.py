@@ -1,3 +1,4 @@
+
 import pandas as pd
 import streamlit as st
 
@@ -36,7 +37,7 @@ def calcula_financiamento(valor_imovel, valor_entrada, prazo, juros_anuais):
 
     df = pd.DataFrame(parcelas)
     df = df[['periodo','amortizacao','juros_divida','valor_pago_mes','pagto_acum','juros_acumulados','amortizacao_acumulada']]
-    print(df.head())
+    #print(df.head())
     df.to_excel('teste_financiamento.xlsx')
     return df
 
