@@ -6,20 +6,20 @@ def print_info_medico(medico_dict):
     for hospital in medico_dict['hospitais']:
         print(f"    Hospital: {hospital}")
 
-# d = {especialidade:[medicos]}
+d = {especialidade:[medicos]}
 
-# def get_medicos_por_especialidade(medicos_dict):
-#     d = {}
-#     for medico in medicos:
-#         nome = medico['nome']
-#         especialidade = medico['especialidade']
-#         if d.get(especialidade) ==None:
-#             d[especialidade] = []
-#         d[especialidade].append(nome)
-#     return d
+def get_medicos_por_especialidade(medicos_dict):
+    d = {}
+    for medico in medicos:
+        nome = medico['nome']
+        especialidade = medico['especialidade']
+        if d.get(especialidade) ==None:
+            d[especialidade] = []
+        d[especialidade].append(nome)
+    return d
 
-#gerar um dicionario {hospital->[nomes]}
-#gerar um dicionario {hospital -> [{nome,especilidade}]}
+gerar um dicionario {hospital->[nomes]}
+gerar um dicionario {hospital -> [{nome,especilidade}]}
 medicos = [
     {
         "nome": "Dr. João Silva",
