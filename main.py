@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # ## Loop
 
 # # i = 0
@@ -144,6 +145,8 @@
 # r=valor_total(2,-3)
 # print(r)
 =======
+=======
+>>>>>>> Stashed changes
 # class Pessoa():
 #     def __init__(self,nome,idade):
 #         self.nome = nome
@@ -277,5 +280,8 @@ medicos = [
 #     print_info_medico(medico)
 
 print(get_medicos_por_especialidade(medicos))
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
