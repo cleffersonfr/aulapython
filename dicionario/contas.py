@@ -56,3 +56,5 @@ def agrupa_gastos_por_tipo(gasto_list):
 
 
 print(agrupa_gastos_por_tipo(gastos))
+
+pip install streamlit
