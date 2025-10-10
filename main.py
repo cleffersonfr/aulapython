@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # ## Loop
 
 # # i = 0
@@ -142,4 +143,139 @@
 #   return
 # r=valor_total(2,-3)
 # print(r)
+=======
+# class Pessoa():
+#     def __init__(self,nome,idade):
+#         self.nome = nome
+#         self.idade = idade
+    
+#     def diz_ola(self, nome):
+#         print(f"Ola {nome} eu sou {self.nome}")
+
+# Dicionario -> chave: valor
+# nao ordenado
+# Json
+
+# d = {
+#     "nome":"marcus",
+#     "materias": [],
+#     "idade": 23
+
+# }
+# #((nome,marcus),(materias,[]))
+
+# print(d['altura'])# quebra o codigo
+# print(d.get('altura'))#-> none
+# d["altura"] = 1.74
+# print(d['nome'])
+
+# print(d.keys())
+# print(d.values())
+
+# for chave,valor in d.items():
+#     if chave == 'nome':
+#         print(valor)
+
+
+# palavra  = 'paralelepipedo'
+# d={}
+# for letra in palavra:
+#     if d.get(letra) ==None:
+#         d[letra] =0
+    
+#     d[letra] +=1
+
+# recorde = -1
+# letra =None
+# for chave, valor in d.items():
+#     if valor> recorde:
+#         recorde = valor
+#         letra = chave
+    
+
+# print(letra,recorde)
+
+def print_info_medico(medico_dict):
+    print("="*20)
+    print(f"Dados do medico: {medico_dict['nome']}")
+    print(f"Especialidade: {medico_dict['especialidade']}")
+    print(f"Hospitais:")
+    for hospital in medico_dict['hospitais']:
+        print(f"    Hospital: {hospital}")
+
+# d = {especialidade:[medicos]}        
+
+def get_medicos_por_especialidade(medicos_dict):
+    d = {}
+    for medico in medicos:
+        nome = medico['nome']
+        especialidade = medico['especialidade']
+        if d.get(especialidade) ==None:
+            d[especialidade] = []
+        d[especialidade].append(nome)
+    return d
+
+#gerar um dicionario {hospital->[nomes]}
+#gerar um dicionario {hospital -> [{nome,especilidade}]}
+medicos = [
+    {
+        "nome": "Dr. João Silva",
+        "especialidade": "Cardiologia",
+        "hospitais": ["Hospital Central", "Clínica Coração Saudável"]
+    },
+    {
+        "nome": "Dra. Maria Oliveira",
+        "especialidade": "Ortopedia",
+        "hospitais": ["Hospital Ortopédico", "Hospital das Clínicas"]
+    },
+    {
+        "nome": "Dr. Pedro Santos",
+        "especialidade": "Neurologia",
+        "hospitais": ["Hospital Neurológico", "Hospital Central"]
+    },
+    {
+        "nome": "Dra. Ana Costa",
+        "especialidade": "Pediatria",
+        "hospitais": ["Hospital Infantil", "Clínica São Lucas"]
+    },
+    {
+        "nome": "Dr. Ricardo Lima",
+        "especialidade": "Dermatologia",
+        "hospitais": ["Clínica da Pele", "Hospital Universitário"]
+    },
+    {
+        "nome": "Dra. Fernanda Rocha",
+        "especialidade": "Cardiologia",
+        "hospitais": ["Hospital Central", "Hospital Universitário"]
+    },
+    {
+        "nome": "Dr. Marcos Pereira",
+        "especialidade": "Ortopedia",
+        "hospitais": ["Hospital Ortopédico", "Hospital Central"]
+    },
+    {
+        "nome": "Dra. Carolina Mendes",
+        "especialidade": "Pediatria",
+        "hospitais": ["Hospital Infantil", "Hospital das Clínicas"]
+    },
+    {
+        "nome": "Dr. Rafael Souza",
+        "especialidade": "Neurologia",
+        "hospitais": ["Hospital Neurológico", "Clínica São Lucas"]
+    },
+    {
+        "nome": "Dra. Beatriz Almeida",
+        "especialidade": "Dermatologia",
+        "hospitais": ["Clínica da Pele", "Hospital das Clínicas"]
+    }
+]
+
+
+
+
+# for medico in medicos:
+#     print_info_medico(medico)
+
+print(get_medicos_por_especialidade(medicos))
+>>>>>>> Stashed changes
 
