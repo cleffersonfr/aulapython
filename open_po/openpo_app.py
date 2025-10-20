@@ -24,28 +24,31 @@ if uploaded_file is not None:
                        'GL Project Description','Need by Date','Ordered Amount (Reporting Currency)',
                        'Remaining Amount (Reporting Currency)'])
     
+     #Formatar need by date para data
     openpo['Need by Date Formatado'] = openpo['Need by Date'].dt.strftime('%b-%Y')
     #filtrar apenas PO Linhas Abertas
+
     openpo = openpo[openpo['PO Line Status'] == "OPEN"]
+
+    #filtrar apenas PO com remaining amount > 0
     openpo = openpo[openpo['Remaining Amount (Reporting Currency)'] > 0]
+
+    #==================================================================================================================================================================
+    #criar tipos de gastos para poder fazer os filtros 
     openpo['tipo_gasto'] = 'Outros'
     openpo.loc[openpo['GL Project Description'].isin(['0000 - DEFAULT PROJECT','8069 - OPEX ACCELERATION']),'tipo_gasto'] = 'Opex'
     openpo.loc[openpo['GL Project Description'].isin(['8001 - NATIONAL MAINT','8000 - CORRECTIVE MAINTENANCE','8002 - PREVENTIVE MAINT']),'tipo_gasto'] = 'R&M'
     openpo.loc[openpo['GL Project Description'].isin(['5300 - INFRA SPOF','5200 - MAINT-GENERAL']),'tipo_gasto'] = 'Controllable Capex'
     openpo.loc[openpo['GL Project Description'].isin(['3990 - INITIAL INSTALLATION','5100 - RECONFIG INSTALL']),'tipo_gasto'] = 'Success Based Capex'
     openpo['Need by Date'] = pd.to_datetime(openpo['Need by Date'])
+    #================================================================================================================================================================== 
     
+    #criar um datadrame que vai ser impactado plos filtros e que vai enviar os dados filtrados para o streamlit
     dataframe_filtrado = openpo.copy()
     
     
-
-
-
-
-
 else:
     st.subheader('Nenhum arquivo disponível')
-
 
 
 
@@ -55,7 +58,7 @@ else:
 lista_paises = openpo['BU Country'].unique()
 lista_tipo_gasto = openpo['tipo_gasto'].unique()
 lista_site = dataframe_filtrado['Location Description'].unique()
-
+#==================================================================================================================
 
 
 #====================================================================================================================
@@ -90,14 +93,14 @@ with st.sidebar:
     
     
     st.image('https://media1.tenor.com/m/vCdo4GQSxVkAAAAd/fiesta-superheros-capitan-am%C3%A9rica.gif')
-    st.text('what the fuck')
+    st.text('Created by Xis Frizzo')
                     
                                             
 #====================================================================================================================
 #FORMATAÇÃO DAS COLUNAS E INFORMAÇÕES PARA O GRÁFICO E PARA O DATAFRAME
 #=====================================================================================================================
 
-if pais_selecionado:
+if pais_selecionado: #se for selecionado algum país no filtro o gráfico e o subheader mudam para detalhe por IBX
     grafico = dataframe_filtrado.groupby('Location Description')['Remaining Amount (Reporting Currency)'].sum()
 
 else:
@@ -115,11 +118,14 @@ st.bar_chart(grafico)
 
 st.subheader('📝 Para ver os principais detalhes por PO, selecione o "checkbox" abaixo.')
 
+#==================================================================================================================
+# criar lista com as colunas que deverão aparecer no dataframe streamlit
 colunas_mostrar_po_fornecedor = ['Location Description',
                        'PO #','PO Line #','Supplier Name',
                        'Need by Date Formatado','Ordered Amount (Reporting Currency)',
                        'Remaining Amount (Reporting Currency)']
 
+#renomear as colunas para rótulos mais amigáveis
 nome_colunas_ajustado = nomes_colunas = {
     'Location Description': 'Site',
     'Supplier Name': 'Fornecedor',
@@ -127,11 +133,14 @@ nome_colunas_ajustado = nomes_colunas = {
     'Ordered Amount (Reporting Currency)': 'Valor Total',
     'Remaining Amount (Reporting Currency)': 'Valor Restante'
 }
-
+#==================================================================================================================
 ver_dataframe = st.checkbox('Ver detalhe por Fornecedor e PO')
+
 
 if ver_dataframe:
     df_exibir = dataframe_filtrado[colunas_mostrar_po_fornecedor].copy()
     df_exibir['Ordered Amount (Reporting Currency)'] = df_exibir['Ordered Amount (Reporting Currency)'].apply(lambda x: f'$ {x:,.1f}')
     df_exibir['Remaining Amount (Reporting Currency)'] = df_exibir['Remaining Amount (Reporting Currency)'].apply(lambda x: f'$ {x:,.1f}')
     st.dataframe(df_exibir[colunas_mostrar_po_fornecedor].rename(columns=nome_colunas_ajustado),hide_index=True,width=2000)
+#Nesta última linha foi feito um rename das colunas, utilizando o nome antigo e o novo nome em um dicionário "nome coluna ajustado"
+#==================================================================================================================
