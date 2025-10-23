@@ -63,11 +63,6 @@ if uploaded_file is not None:
     
 
 
-
-
-
-
-
 #====================================================================================================================
 #SIDEBAR
 #=====================================================================================================================
@@ -148,7 +143,7 @@ if uploaded_file is not None:
         df_exibir = dataframe_filtrado[colunas_mostrar_po_fornecedor].copy()
         df_exibir['Ordered Amount (Reporting Currency)'] = df_exibir['Ordered Amount (Reporting Currency)'].apply(lambda x: f'$ {x:,.1f}')
         df_exibir['Remaining Amount (Reporting Currency)'] = df_exibir['Remaining Amount (Reporting Currency)'].apply(lambda x: f'$ {x:,.1f}')
-        st.dataframe(df_exibir[colunas_mostrar_po_fornecedor].rename(columns=nome_colunas_ajustado),hide_index=True,width=2000)
+        st.dataframe(df_exibir[colunas_mostrar_po_fornecedor].rename(columns=nome_colunas_ajustado),hide_index=True, use_container_width=True)
     #Nesta última linha foi feito um rename das colunas, utilizando o nome antigo e o novo nome em um dicionário "nome coluna ajustado"
     #==================================================================================================================
 
