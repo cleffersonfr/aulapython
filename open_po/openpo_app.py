@@ -14,7 +14,7 @@ with col2:
 def upload_file():
     
     openpo = pd.read_excel(uploaded_file,
-                    usecols=['BU Country','Location','Location Description','Cost Center Description',
+                    usecols=['BU Country','Location','Location Description','Cost Center Description','Requestor',
                     'GL Account Description','PO #','PO Line #','PO Creation Date in Source System',
                     'PO Status','PO Line Status','Supplier #','Supplier Name',
                     'GL Project Description','Need by Date','Ordered Amount (Reporting Currency)',
@@ -59,9 +59,6 @@ if uploaded_file is not None:
     #criar um datadrame que vai ser impactado plos filtros e que vai enviar os dados filtrados para o streamlit
     dataframe_filtrado = openpo.copy()
     
-
-    
-
 
 #====================================================================================================================
 #SIDEBAR
@@ -122,7 +119,7 @@ if uploaded_file is not None:
 
     #==================================================================================================================
     # criar lista com as colunas que deverão aparecer no dataframe streamlit
-    colunas_mostrar_po_fornecedor = ['Location Description',
+    colunas_mostrar_po_fornecedor = ['Requestor','Location Description',
                         'PO #','PO Line #','Supplier Name',
                         'Need by Date Formatado','Ordered Amount (Reporting Currency)',
                         'Remaining Amount (Reporting Currency)']
